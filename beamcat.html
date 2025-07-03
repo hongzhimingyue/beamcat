@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeamCat</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+    <div id="mCircle"></div>
+    <canvas id="myCanvas"></canvas>
+    
+    <div class="control"><button id="startAndStop">Start</button></div>
+    <div class="contro3"><button id="btnStop">Stop</button></div>
+
+    <video class="input_video2" style="transform: scaleX(-1);" width="640" height="480"></video>
+    <canvas class="output2" style="visibility: hidden;" width="320" height="240"></canvas>
+    <p class="err" id="errorMessage"></p>
+    <p>XY: <span id="time">0 0</span></p>
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+    <div style="visibility: hidden;" class="control2">
+</body>
+<script src="./assets/utils.js"></script>
+<script src="./assets/control_utils.js" crossorigin="anonymous"></script>
+<script src="./assets/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="./assets/face_mesh.js" crossorigin="anonymous"></script>
+<script src="./assets/faceMesh.min.js"></script>
+</html>
