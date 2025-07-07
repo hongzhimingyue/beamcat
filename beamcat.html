@@ -8,11 +8,30 @@
 </head>
 <body>
     <div id="mCircle"></div>
+    <div id="context-menu" style="display:none; position:absolute; background-color:white; border:1px solid black;">
+        <ul style="width:90px">
+            <li>option 1</li>
+            <li>option 2</li>
+            <li>option 3</li>
+        </ul>
+    </div>
+        <div id="containe">
+            <dl>
+                <dt onclick="f1(this)"></dt>
+                <dd>single click</dd>
+            </dl>
+            <dl>
+                <dt ondblclick="f2(this)"></dt>
+                <dd>double click</dd>
+            </dl>
+        </div>
+
     <canvas id="myCanvas"></canvas>
-    
+
     <div class="control"><button id="startAndStop">Start</button></div>
     <div class="contro3"><button id="btnStop">Stop</button></div>
 
+    <input id="myInput" type="text" name="username" value="default username">
     <video class="input_video2" style="transform: scaleX(-1);" width="640" height="480"></video>
     <canvas class="output2" style="visibility: hidden;" width="320" height="240"></canvas>
     <p class="err" id="errorMessage"></p>
@@ -20,8 +39,56 @@
     <div class="loading">
         <div class="spinner"></div>
     </div>
-    <div style="visibility: hidden;" class="control2">
+    <div style="visibility: hidden;" class="control2"></div>
 </body>
+<script type="text/javascript">
+    var num1=0,num2=0;
+    function f1(e){
+        num1++;
+        if(num1%2==0)
+            e.className="blue";
+        else
+            e.className="yellow";
+    }
+    function f2(e){
+        num2++;
+        if(num2%2==0)
+            e.className="blue";
+        else
+            e.className="yellow";
+    }
+    function mouseMove(ev){             
+        ev=ev||window.event;
+        var el=document.getElementById("ele");
+        var x=ev.clientX-el.offsetLeft;
+        var y=ev.clientY-el.offsetTop;
+        if(x<el.offsetWidth/2)
+            el.style.background="lightgoldenrodyellow";
+        else
+            el.style.background="lightpink";
+        // document.getElementById("echo").innerHTML="x:"+x+"<br>y:"+y;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var contextMenu = document.getElementById('context-menu');
+        var isContextMenuVisible = false;
+     
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // 阻止默认的右键菜单
+            isContextMenuVisible = true;
+            contextMenu.style.display = 'block';
+            contextMenu.style.left = b.w.x + 'px';
+            contextMenu.style.top = b.w.y + 'px';
+        });
+     
+        document.addEventListener('click', function() {
+            if (isContextMenuVisible) {
+                contextMenu.style.display = 'none';
+                isContextMenuVisible = false;
+            }
+        });
+    });
+</script>
 <script src="./assets/utils.js"></script>
 <script src="./assets/control_utils.js" crossorigin="anonymous"></script>
 <script src="./assets/drawing_utils.js" crossorigin="anonymous"></script>
