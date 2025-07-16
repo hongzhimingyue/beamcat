@@ -100,7 +100,8 @@ function Utils(errorOutputId) { // eslint-disable-line no-unused-vars
         } else if (err instanceof Error) {
             err = err.stack.replace(/\n/g, '<br>');
         }
-        this.errorOutput.innerHTML = err;
+        console.log("err:", err);
+        // this.errorOutput.innerHTML = err;
     };
 
     this.loadCode = function(scriptId, textAreaId) {

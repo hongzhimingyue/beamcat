@@ -88,9 +88,13 @@ dl{
 }
 #mCircle {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: red;
+    width: 8px;
+    height: 8px;
+    border: 5px solid #007AFF;  /* 添加红色边框 */
+    background-color: transparent;  /* 背景透明 */
     border-radius: 50%;
     z-index: 20;
+}
+#mCircle.clicking {
+  transform: scale(0.8);
 }

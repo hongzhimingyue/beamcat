@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-    <div id="mCircle"></div>
+    <div id="mCircle">
+        <!-- <img src="cursor.png" width="50px" height="50px" alt="Transparent Image"> -->
+    </div>
+
     <div id="context-menu" style="display:none; position:absolute; background-color:white; border:1px solid black;">
         <ul style="width:90px">
             <li>option 1</li>
@@ -27,20 +30,20 @@
         </div>
 
     <canvas id="myCanvas"></canvas>
-
+    <!--img src="cursor.png" width="50px" height="50px" alt="Transparent Image"-->
     <div class="control"><button id="startAndStop">Start</button></div>
-    <div class="contro3"><button id="btnStop">Stop</button></div>
+    <!-- <div class="contro3"><button id="btnStop">Stop</button></div> -->
 
     <input id="myInput" type="text" name="username" value="default username">
-    <video class="input_video2" style="transform: scaleX(-1);" width="640" height="480"></video>
+    <video class="input_video2" id="BeamCatlocalVideo" style="transform: scaleX(-1);" width="640" height="480"></video>
     <canvas class="output2" style="visibility: hidden;" width="320" height="240"></canvas>
-    <p class="err" id="errorMessage"></p>
-    <p>XY: <span id="time">0 0</span></p>
-    <div class="loading">
+    <!-- <p class="err" id="errorMessage"></p> -->
+    <!-- <p>XY: <span id="time">0 0</span></p> -->
+    <!-- <div class="loading">
         <div class="spinner"></div>
-    </div>
+    </div> -->
     <!-- <iframe id="myIframe" src="https://www.britannica.com/"></iframe> -->
-    <div style="visibility: hidden;" class="control2"></div>
+    <!-- <div style="visibility: hidden;" class="control2"></div> -->
 </body>
 <script type="text/javascript">
     var num1=0,num2=0;
