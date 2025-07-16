@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>뉴스 상세</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="media/logo.png">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <span class="logo">Y 뉴스</span>
+            <button class="topbar-start-btn" id="startAndStop">Start</button>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <!-- <a href="#">언론사별</a> -->
+            <a href="#">정치</a>
+            <a href="#">경제</a>
+            <a href="#">사회</a>
+            <a href="#">생활</a>
+            <a href="#">문화</a>
+            <a href="#">IT</a>
+            <a href="#">과학</a>
+            <a href="#">세계</a>
+            <a href="#">아시아</a>
+            <a href="#">한국</a>
+            <!-- <a href="#">TV</a>
+            <a href="#">팩트체크</a>
+            <a href="#">알고리즘 안내</a>
+            <a href="#">정정보도 모음</a> -->
+            <!-- <button id="startAndStop">Start</button> -->
+            <div id="mCircle"></div>
+            <video class="input_video2" style="transform: scaleX(-1);" width="640" height="480"></video>
+            <canvas class="output2" style="visibility: hidden;" width="0" height="0"></canvas>
+            <script src="./assets/utils.js"></script>
+            <script src="./assets/control_utils.js" crossorigin="anonymous"></script>
+            <script src="./assets/drawing_utils.js" crossorigin="anonymous"></script>
+            <script src="./assets/face_mesh.js" crossorigin="anonymous"></script>
+            <script src="./assets/faceMesh.min.js"></script>
+            <style>
+                   #mCircle {
+                    position: absolute;
+                    top:100px;
+                    width: 8px;
+                    height: 8px;
+                    border: 5px solid #007AFF;  /* 添加红色边框 */
+                    background-color: transparent;  /* 背景透明 */
+                    border-radius: 50%;
+                    z-index: 20;
+                }
+                #mCircle.clicking {
+                    transform: scale(0.8);
+                }
+            </style>
+
+        </div>
+    </nav>
+    <div class="divider"></div>
+    <main class="detail-main">
+        <div class="detail-container">
+            <!-- 媒体栏 -->
+            <div class="detail-pressbar">
+                <button class="detail-back-btn" onclick="window.history.back()" title="返回"><span class="icon">←</span></button>
+                <img class="detail-press-logo" id="detail-press-logo" src="media/logo.png" alt="logo">
+                <span class="detail-press" id="detail-press">뉴스1</span>
+                <span class="detail-subscribe">구독</span>
+                <span class="detail-pick">PICK</span>
+            </div>
+            <!-- 标题 -->
+            <h1 class="detail-title" id="detail-title">뉴스 제목 예시</h1>
+            <!-- 元信息 -->
+            <div class="detail-meta-row">
+                <span class="detail-date" id="detail-date">입력 2025.07.16. 오후 12:22</span>
+                <span class="detail-modified" id="detail-modified">수정 2025.07.16. 오후 12:23</span>
+                <span class="detail-writer" id="detail-writer">서상혁 외 2명</span>
+                <span class="detail-original">기사원문</span>
+            </div>
+            <!-- 功能按钮区 -->
+            <div class="detail-actionbar">
+                <button class="detail-btn detail-btn-recommend"><span class="icon">😊</span> <span id="detail-recommend">추천</span></button>
+                <button class="detail-btn detail-btn-comment"><span class="icon">💬</span> <span id="detail-comment">댓글</span></button>
+                <button class="detail-btn detail-btn-share"><span class="icon">🔗</span> 공유</button>
+                <button class="detail-btn detail-btn-copy"><span class="icon">📋</span> 복사</button>
+                <button class="detail-btn detail-btn-setting"><span class="icon">⚙️</span> 설정</button>
+            </div>
+            <!-- 引用/导语块 -->
+            <blockquote class="detail-summary-block"><span id="detail-summary">뉴스 본문 요약이 이곳에 표시됩니다.</span></blockquote>
+            <!-- 图片已移除 -->
+            <!-- 正文 -->
+            <div class="detail-content" id="detail-content">
+                뉴스 본문 내용이 이곳에 표시됩니다.
+            </div>
+        </div>
+    </main>
+    <script src="detail.js"></script>
+</body>
+</html> 
