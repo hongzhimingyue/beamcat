@@ -18,7 +18,7 @@ function Utils(errorOutputId) { // eslint-disable-line no-unused-vars
                 // WASM
                 if (cv instanceof Promise) {
                     cv = await cv;
-                    console.log(cv.getBuildInformation());
+                    //console.log(cv.getBuildInformation());
                     onloadCallback();
                 } else {
                     cv['onRuntimeInitialized']=()=>{
